@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Quattrocento+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+<!--sprite-->
+<svg style="display: none;">
+    <symbol id="facebook" viewBox="0 0 24 24">
+        <g>
+            <path
+                d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z" />
+        </g>
+
+    </symbol>
+    <symbol id="twitter" viewBox="0 0 512 512">
+        <g>
+           <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+			c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+			c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+			c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+			c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+			c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+			C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+			C480.224,136.96,497.728,118.496,512,97.248z"/>
+        </g>
+    </symbol>
+    <symbol id="google" viewBox="0 0 604.35 604.35">
+        <g>
+            <path d="M423.301,341.7l-28.051-20.4c-10.199-7.649-20.4-17.85-20.4-35.7s12.75-33.15,25.5-40.8
+			c33.15-25.5,66.301-53.55,66.301-109.65c0-53.55-33.15-84.15-51-99.45H459L489.6,0H331.5C219.3,0,163.2,71.4,163.2,147.9
+			c0,58.65,45.9,122.4,127.5,122.4h20.4c-2.55,7.65-10.2,20.4-10.2,33.15c0,25.5,10.2,35.7,22.95,51
+			c-35.7,2.55-102,10.2-150.45,40.8c-45.9,28.05-58.65,66.3-58.65,94.35c0,58.65,53.55,114.75,168.3,114.75
+			c137.7,0,204.001-76.5,204.001-150.449C487.051,400.35,459,372.3,423.301,341.7z M229.5,109.65c0-56.1,33.15-81.6,68.85-81.6
+			c66.3,0,102,89.25,102,140.25c0,66.3-53.549,79.05-73.949,79.05C262.65,247.35,229.5,168.3,229.5,109.65z M321.301,568.65
+			C237.15,568.65,183.6,530.4,183.6,474.3c0-56.1,51-73.95,66.3-81.6c33.15-10.2,76.5-12.75,84.151-12.75c7.648,0,12.75,0,17.85,0
+			c61.199,43.35,86.699,61.2,86.699,102C438.6,530.4,390.15,568.65,321.301,568.65z"/>
+        </g>
+
+    </symbol>
+    <symbol id="behance" viewBox="0 0 24 24">
+        <g>
+            <path d="m12.363 14.947c0-1.848-.879-3.214-2.695-3.726 1.325-.631 2.016-1.587 2.016-3.074 0-2.932-2.192-3.647-4.721-3.647h-6.963v14.721h7.158c2.684 0 5.205-1.283 5.205-4.274zm-9.117-7.934h3.046c1.171 0 2.225.328 2.225 1.682 0 1.25-.82 1.753-1.98 1.753h-3.291zm-.001 9.708v-4.054h3.538c1.429 0 2.333.594 2.333 2.102 0 1.487-1.079 1.952-2.4 1.952z"/><path d="m18.796 19.5c2.554 0 4.208-1.147 5.004-3.585h-2.592c-.279.91-1.429 1.391-2.321 1.391-1.721 0-2.625-1.005-2.625-2.713h7.713c.244-3.418-1.66-6.331-5.18-6.331-3.259 0-5.471 2.442-5.471 5.641 0 3.32 2.096 5.597 5.472 5.597zm-.092-9.026c1.475 0 2.217.864 2.341 2.277h-4.779c.097-1.401 1.03-2.277 2.438-2.277z"/><path d="m15.667 5.273h5.988v1.45h-5.988z"/>
+        </g>
+
+    </symbol>
+    <symbol id="dribble" viewBox="0 0 512 512">
+        <g>
+        <path
+            d="M256,0C115.04,0,0,115.05,0,256c0,140.96,115.05,256,256,256c140.96,0,256-115.05,256-256C512,115.04,396.95,0,256,0z   M429.64,111.51c31.96,38.34,51.47,87.39,52.31,140.89c-40.06-9.37-84.55-10-129.86-1.74c-11.79,2.15-23.58,4.88-35.3,8.16  c-3.9-10.61-8.04-21.13-12.44-31.55c-4.49-10.63-9.23-21.08-14.19-31.38C344.15,175.27,402.65,144.57,429.64,111.51z M256,30  c58.82,0,112.45,22.59,152.7,59.54C393,110.95,348.26,142.12,276.48,169c-25.06-46.66-55.11-89.54-89.83-128.1  C208.51,33.83,231.82,30,256,30z M156.95,52.9c35.41,37.93,65.87,80.29,90.96,126.05c-74.68,24.17-150.29,34.03-212.46,27.66  C50.59,138.96,96.14,82.67,156.95,52.9z M30,256c0-6.64,0.31-13.21,0.87-19.7c13.72,1.45,28.03,2.18,42.82,2.18  c58.33,0,123.86-11.22,188.21-32.53c9.82,20.1,18.65,40.78,26.44,61.97c-25.09,9.02-49.51,20.49-72.44,34.14  c-56.22,33.47-97.35,76.53-114.41,118.71C57.52,379.51,30,320.91,30,256z M256,482c-48.29,0-93.09-15.23-129.86-41.14  c11.4-38.52,49.96-80.19,105.11-113.02c19.43-11.58,42.15-22.49,66.88-31.36c17.53,55.1,28.27,113.26,31.68,173.13  C306.67,477.63,281.84,482,256,482z M359.07,457.1c-4.16-58.32-15.02-115.1-32.45-169.64c48.6-13.36,102.58-17.84,153.77-4.56  C471.33,358.91,424.41,423.47,359.07,457.1z" />
+        </g>
+
+    </symbol>
+    <symbol id="skype" viewBox="0 0 512 512">
+        <g>
+              <path d="M497.28,310.336c3.712-16.672,5.632-33.952,5.632-51.68c0-132.96-109.312-240.768-244.192-240.768
+			c-14.208,0-28.16,1.216-41.76,3.52C195.136,7.872,169.312,0,141.632,0C63.392,0,0,62.496,0,139.648
+			c0,25.76,7.104,49.856,19.456,70.624c-3.232,15.616-4.96,31.808-4.96,48.384c0,132.992,109.344,240.8,244.192,240.8
+			c15.296,0,30.24-1.408,44.736-4.032C323.392,505.984,346.176,512,370.4,512c78.208,0,141.6-62.528,141.6-139.616
+			C512,350.08,506.688,329.056,497.28,310.336z M383.968,373.728c-11.296,15.776-27.968,28.256-49.632,37.088
+			c-21.408,8.8-47.04,13.28-76.288,13.28c-35.072,0-64.48-6.08-87.456-18.112c-16.416-8.736-29.92-20.544-40.192-35.2
+			c-10.4-14.72-15.616-29.344-15.616-43.488c0-8.8,3.424-16.448,10.176-22.688c6.688-6.24,15.264-9.344,25.504-9.344
+			c8.384,0,15.616,2.464,21.504,7.36c5.6,4.704,10.432,11.68,14.304,20.608c4.32,9.792,9.024,18.048,13.984,24.48
+			c4.832,6.304,11.712,11.552,20.512,15.68c8.864,4.096,20.8,6.24,35.456,6.24c20.192,0,36.768-4.256,49.184-12.64
+			c12.192-8.16,18.08-18.016,18.08-30.048c0-9.472-3.104-16.96-9.408-22.816c-6.656-6.144-15.424-10.912-26.048-14.208
+			c-11.104-3.392-26.176-7.104-44.8-10.944c-25.376-5.344-46.912-11.68-64-18.88c-17.504-7.36-31.648-17.536-41.952-30.272
+			c-10.496-12.96-15.808-29.184-15.808-48.256c0-18.176,5.568-34.56,16.576-48.704c10.912-14.048,26.848-25.024,47.424-32.48
+			c20.256-7.392,44.352-11.136,71.648-11.136c21.792,0,40.96,2.496,56.992,7.424c16.096,4.928,29.664,11.584,40.32,19.808
+			c10.752,8.32,18.752,17.12,23.744,26.336c5.056,9.28,7.648,18.528,7.648,27.456c0,8.608-3.36,16.448-10.016,23.232
+			c-6.72,6.88-15.168,10.336-25.088,10.336c-9.024,0-16.128-2.208-21.024-6.464c-4.576-4-9.344-10.24-14.592-19.136
+			c-6.08-11.392-13.472-20.384-21.92-26.752c-8.224-6.176-21.92-9.248-40.8-9.248c-17.472,0-31.744,3.456-42.304,10.304
+			c-10.176,6.56-15.136,14.112-15.136,23.072c0,5.472,1.6,10.048,4.896,13.984c3.456,4.224,8.352,7.84,14.56,10.912
+			c6.4,3.168,13.024,5.728,19.648,7.52c6.784,1.856,18.144,4.64,33.792,8.192c19.776,4.16,37.92,8.864,53.984,13.952
+			c16.288,5.088,30.304,11.392,41.824,18.784c11.68,7.52,20.928,17.12,27.52,28.64c6.592,11.616,9.92,25.856,9.92,42.432
+			C401.056,339.84,395.296,357.92,383.968,373.728z"/>
+        </g>
+        
+    </symbol>
+    <symbol id="linkedin" viewBox="0 0 24 24">
+        <g>
+                <path
+                    d="m23.994 24v-.001h.006v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07v-2.185h-4.773v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243v7.801z" />
+                <path d="m.396 7.977h4.976v16.023h-4.976z" />
+                <path
+                    d="m2.882 0c-1.591 0-2.882 1.291-2.882 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909c-.001-1.591-1.292-2.882-2.882-2.882z" />
+        </g>
+        
+    </symbol>
+
+
+</svg>
+
+
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img class="img-fluid" src="images/logo.png" alt="">
+                </div>
+                <nav class="nav">
+                    <a class="nav__link" href="#">Home</a>
+                    <a class="nav__link" href="#">About</a>
+                    <a class="nav__link" href="#">Work</a>
+                    <a class="nav__link" href="#">Team</a>
+                    <a class="nav__link" href="#">Services</a>
+                    <a class="nav__link" href="#">Features</a>
+                    <a class="nav__link" href="#">Contact</a>
+                   
+                </nav>
+            </div>   
+        </div>
+    </header>
+
+    <div class="intro">
+        <div class="container">
+            <div class="intro__inner">
+                    <h1 class="intro__title">welcome to our marketplace</h1>
+                    <h2 class="intro__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique ndolor
+                    non, ornare sagittis dolor. Nulla vestibulu lacus ...</h2>
+                    <a class="btn" href="#">view more</a>
+                    <a class="btn" href="#">video tour</a>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="container">
+         <div class="about">
+             <div class="about__inner">
+                 <div class="title">
+                    <h3 class="title__text">
+                        we are modest.
+                    </h3>
+                </div>
+                
+                <div class="about__inner-box">
+
+
+                    <div class="about__inner-left">
+                        <div class="about__text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique ndolor non, ornare sagittis dolor.
+                                Nulla vestibulu lacus sed molestie gravida. Crferm entum quismagna congue, vel sodales arcu vestibulum. Nunc lobortis
+                                dui magna, quis lacusullamcorper at. 
+                            </p>
+                            <p>Phasellus sollicitudin ante eros ornare, <strong>sit amet luctus lorem semper.</strong>Suspendisse posuere, quamdictum consectetur, augue metus pharetra tellus, eu feugiatloreg egetnisi. Cras ornare bibendum
+                                ante, ut bibendum odio convallis eget. vel sodales arcu vestibulum
+                            </p>
+                        </div>
+                       
+                        <div class="social">
+
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#facebook"></use>
+                                </svg>
+                            </a>
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#twitter"></use>
+                                </svg>
+                            </a>
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#google"></use>
+                                </svg>
+                            </a>
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#dribble"></use>
+                                </svg>
+                            </a>
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#behance"></use>
+                                </svg>
+                            </a>
+
+
+                        </div><!--/social-->
+
+
+
+                    </div>
+                                  
+                    <ol class="about__list">
+                        <li class="list__item">
+                            <div class="item__inner">
+                                <h4 class="list__title">
+                                    Dedication to the customers
+                                </h4>
+                                <p class="list__text">
+                                    Integer vel lacus non dui ullamcorper venenatis. Aliquam vitae tristique nisi, vitae ullamcorper risus.
+                                    Nam
+                                </p>
+
+                            </div>
+                        </li>
+                        <li class="list__item">
+                            <div class="item__inner">
+                                <h4 class="list__title">
+                                    working closely with our clients
+                                </h4>
+                                <p class="list__text">
+                                    Sed blandit nisi urna, sed pellentesque enim consectetur vitae. Suspendisse ut vehicula nibh.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="list__item">
+                            <div class="item__inner">
+                                <h4 class="list__title">
+                                    increase happiness
+                                </h4>
+                                <p class="list__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend laoreet euismod.
+                                </p>
+                            </div>
+                        </li>
+                    </ol>
+
+              
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="team">
+        <div class="title">
+            <h3 class="title__text">
+                meet the team.
+            </h3>
+        </div>
+        <div class="team__inner">
+            <div class="team__item">
+                <img class="team__image" src="images/team/team-1.jpeg" alt="">
+                <div class="team__text">
+                    <div class="team__name">Gloria Bromley</div>
+                    <div class="team__prof">CEO and Founder</div>
+                </div>
+           
+                <div class="team__content">
+                    <div class="social social--team">
+                        
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#twitter"></use>
+                                </svg>
+                            </a>
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#facebook"></use>
+                                </svg>
+                            </a>
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#linkedin"></use>
+                                </svg>
+                            </a>
+                    </div>
+
+                </div>
+       
+             </div>
+             <div class="team__item">
+                <img class="team__image" src="images/team/team-2.jpeg" alt="">
+                <div class="team__text">
+                    <div class="team__name">Gloria Bromley</div>
+                    <div class="team__prof">CEO and Founder</div>
+                </div>
+           
+                <div class="team__content">
+                    <div class="social social--team">
+                        
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#twitter"></use>
+                                </svg>
+                            </a>
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#facebook"></use>
+                                </svg>
+                            </a>
+                            <a class="social__item" href="#">
+                                <svg class="social__icon">
+                                    <use xlink: href="#linkedin"></use>
+                                </svg>
+                            </a>
+                    </div>
+
+                </div>
+       
+             </div>
+        <div class="team__item">
+            <img class="team__image" src="images/team/team-3.jpeg" alt="">
+            <div class="team__text">
+                <div class="team__name">Gloria Bromley</div>
+                <div class="team__prof">CEO and Founder</div>
+            </div>
+        
+            <div class="team__content">
+                <div class="social social--team">
+        
+                    <a class="social__item" href="#">
+                        <svg class="social__icon">
+                            <use xlink: href="#twitter"></use>
+                        </svg>
+                    </a>
+                    <a class="social__item" href="#">
+                        <svg class="social__icon">
+                            <use xlink: href="#facebook"></use>
+                        </svg>
+                    </a>
+                    <a class="social__item" href="#">
+                        <svg class="social__icon">
+                            <use xlink: href="#linkedin"></use>
+                        </svg>
+                    </a>
+                </div>
+        
+            </div>
+        
+        </div>
+        <div class="team__item">
+            <img class="team__image" src="images/team/team-4.jpeg" alt="">
+            <div class="team__text">
+                <div class="team__name">Gloria Bromley</div>
+                <div class="team__prof">CEO and Founder</div>
+            </div>
+        
+            <div class="team__content">
+                <div class="social social--team">
+        
+                    <a class="social__item" href="#">
+                        <svg class="social__icon">
+                            <use xlink: href="#twitter"></use>
+                        </svg>
+                    </a>
+                    <a class="social__item" href="#">
+                        <svg class="social__icon">
+                            <use xlink: href="#facebook"></use>
+                        </svg>
+                    </a>
+                    <a class="social__item" href="#">
+                        <svg class="social__icon">
+                            <use xlink: href="#linkedin"></use>
+                        </svg>
+                    </a>
+                </div>
+        
+            </div>
+        
+        </div>
+
+
+        </div><!--/team__inner-->
+    </div><!--/team-->
+
+
+
+    </div><!--/container-->
+
+
+<div class="work">
+    <div class="container">
+
+
+        <div class="title">
+            <h3 class="title__text">
+                LOVELY WORK.
+            </h3>
+        </div>
+
+        <div class="work__inner">
+            <div class="work__item">
+                <img class="work__image" src="images/work/work-1.jpeg" alt="">
+                <div class="work__content">
+                    <h4 class="work__title">
+                        partnership guidlines
+                    </h4>
+                </div>
+            </div>
+
+            <div class="work__item">
+                <img class="work__image" src="images/work/work-2.jpeg" alt="">
+                <div class="work__content">
+                    <h4 class="work__title">
+                        partnership guidlines
+                    </h4>
+                </div>
+            </div>
+            <div class="work__item">
+                <img class="work__image" src="images/work/work-3.jpeg" alt="">
+                <div class="work__content">
+                    <h4 class="work__title">
+                        partnership guidlines
+                    </h4>
+                </div>
+            </div>
+            <div class="work__item">
+                <img class="work__image" src="images/work/work-4.jpeg" alt="">
+                <div class="work__content">
+                    <h4 class="work__title">
+                        partnership guidlines
+                    </h4>
+                </div>    
+            </div>
+            <div class="work__item">
+                <img class="work__image" src="images/work/work-5.jpeg" alt="">
+                <div class="work__content">
+                    <h4 class="work__title">
+                        partnership guidlines
+                    </h4>
+                </div>
+            </div>
+            <div class="work__item">
+                <img class="work__image" src="images/work/work-6.jpeg" alt="">
+                <div class="work__content">
+                    <h4 class="work__title">
+                        partnership guidlines
+                    </h4>
+                </div>
+            </div>
+
+        </div>
+        <div class="btn__wrapper">
+            <a class="btn btn--center" href="#">show me more</a>
+        </div>
+    </div> <!--/container-->
+</div><!--/work-->
+
+
+
+
+
+    <!--services-->
+    <div class="container">
+    <div class="services">
+        <div class="title">
+            <h3 class="title__text">
+                what we do.
+            </h3>
+        </div>
+        
+        <div class="services__inner">
+           <div class="services__item">
+                <img class="services__icon" src="images/services/service-1.png" alt="">
+                <h4 class="services__title">
+                    Easy theme Setup
+                </h4>
+                <div class="services__text">
+                    Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.
+                </div>
+            </div>
+            <div class="services__item">
+                <img class="services__icon" src="images/services/service-2.png" alt="">
+                <h4 class="services__title">
+                    pixel perfect design
+                </h4>
+                <div class="services__text">
+                    Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.
+                </div>
+            </div>
+           <div class="services__item">
+                <img class="services__icon" src="images/services/service-3.png" alt="">
+                <h4 class="services__title">
+                    responsive display
+                </h4>
+                <div class="services__text">
+                    Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.
+                </div>
+            </div>
+           <div class="services__item">
+                <img class="services__icon" src="images/services/service-4.png" alt="">
+                <h4 class="services__title">
+                    24/7 support
+                </h4>
+                <div class="services__text">
+                    Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.
+                </div>
+            </div>
+
+            <div class="services__item">
+                <img class="services__icon" src="images/services/service-1.png" alt="">
+                <h4 class="services__title">
+                    Easy theme Setup
+                </h4>
+                <div class="services__text">
+                    Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.
+                </div>
+            </div>
+            <div class="services__item">
+                <img class="services__icon" src="images/services/service-2.png" alt="">
+                <h4 class="services__title">
+                    pixel perfect design
+                </h4>
+                <div class="services__text">
+                    Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.
+                </div>
+            </div>
+            <div class="services__item">
+                <img class="services__icon" src="images/services/service-3.png" alt="">
+                <h4 class="services__title">
+                    responsive display
+                </h4>
+                <div class="services__text">
+                    Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.
+                </div>
+            </div>
+            <div class="services__item">
+                <img class="services__icon" src="images/services/service-4.png" alt="">
+                <h4 class="services__title">
+                    24/7 support
+                </h4>
+                <div class="services__text">
+                    Nunc mattis lorem in leo lobortis, ut venenatis justo commodo. Maecenas a justo nec velit egestas fermentum.
+                </div>
+            </div>
+
+                
+        </div>
+    </div><!--/services-->
+    </div><!--/container-->
+
+    <div class="features">
+        <div class="container">
+            
+
+            <div class="title">
+                <h3 class="title__text">
+                    FEATURES.
+                </h3>
+            </div>
+       
+        <div class="features__inner">
+            <div class="features__item">
+                <img class="features__image" src="images/features/feature-1.jpeg" alt="">
+                <h4 class="features__title">
+                    Product Design: Eames Chairs
+                </h4>
+                <div class="features__text">
+                    Eames designs are certainly iconic. Everyone of us know at least two or three of their famous chairs. I would even risk saying that most of us dream about having a nice Eames.
+                </div>
+            </div>
+            <div class="features__item">
+                <img class="features__image" src="images/features/feature-2.jpeg" alt="">
+                <h4 class="features__title">
+                    Elegant and Colorful Logos
+                </h4>
+                <div class="features__text">
+                    I’ve always found logo design to be one of the most challenging things to get right. There’s so much that a logo can say
+                    about a brand without actually saying it.
+                </div>
+            </div>
+            <div class="features__item">
+                <img class="features__image" src="images/features/feature-3.jpeg" alt="">
+                <h4 class="features__title">
+                    A Showcase of Creative
+                </h4>
+                <div class="features__text">
+                    It’s always interesting to see another designer’s take on a famous website, app or even physical product. Different
+                    designers add their own personality and style.
+                </div>
+            </div>
+        </div>
+        </div><!--/container-->
+    </div><!--/features-->
+
+<div class="container">
+    <div class="title">
+        <h3 class="title__text">
+            stay in touch.
+        </h3>
+    </div>
+    <div class="contact">
+       
+        </div><!--/container-->
+        <div class="contact__wrapper">
+
+            <img class="contact__image" src="images/contact.jpeg" alt="">
+          
+        </div>
+          
+            <div class="container">
+                <div class="contact__inner"> 
+                    <div class="contact__content">
+                            <div class="contact__title">contact information</div>
+                            <div class="contact__text">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi metus, tristique nec dolor non, ornare sagittis dolor.
+                                    Nulla vestibulum lacus sed molestie gravida.
+                                </p>
+                                <p>
+                                    Cras fermentum elit quis magna congue, <strong>vel sodales</strong> arcu vestibulum. Nunc lobortis dui magna, quis dapibus lacus
+                                </p>
+                            </div>
+                    </div>
+                        <div class="form__wrapper">
+                            <form name="newform" method="post" action="#">
+                                <div class="form__inputs">
+                                    <p>your name <input class="" type="text"></p>
+
+                                    <p>your email <input class="" type="text"></p>
+                                </div>
+                                <p>your message</p>
+                                <textarea name="text"></textarea>
+                                <div class="button__block">
+                                    <input type="submit" value="send message">
+                                </div>
+                            </form>
+                        </div>
+
+                </div>
+
+            </div><!--/container-->
+       
+    </div>
+
+
+
+
+
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="copyright">
+                
+                    <div class="copyright__text">
+                        <div>
+                            © Copyright 2014 by PSD Booster. All Rights Reserved.
+                        </div>
+                        
+                    </div>
+                
+            </div>
+            <div class="social social--footer">
+            
+                <a class="social__item" href="#">
+                    <svg class="social__icon">
+                        <use xlink: href="#twitter"></use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#">
+                    <svg class="social__icon">
+                        <use xlink: href="#facebook"></use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#">
+                    <svg class="social__icon">
+                        <use xlink: href="#skype"></use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#">
+                    <svg class="social__icon">
+                        <use xlink: href="#dribble"></use>
+                    </svg>
+                </a>
+                <a class="social__item" href="#">
+                    <svg class="social__icon">
+                        <use xlink: href="#linkedin"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    
+</body>
+</html>
